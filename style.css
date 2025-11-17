@@ -1,0 +1,26 @@
+#aiPanel {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border: 2px solid #333;
+  padding: 10px;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#aiPanel h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+#aiPanel button {
+  margin: 3px 0;
+  width: 100%;
+}
+#aiOutput {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 5px;
+  font-size: 14px;
+}
