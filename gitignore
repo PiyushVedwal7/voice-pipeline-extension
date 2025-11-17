@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+env/
+venv/
+*.sqlite3
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Byte-compiled / C extensions
+*.so
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Pytest / unittest
+.pytest_cache/
+
+# Secrets & API keys
+secrets/
+*.key
+*.pem
+.env
+
+# Ignore Chrome extension folder
+extension/
