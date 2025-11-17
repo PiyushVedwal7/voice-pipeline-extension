@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "PIPELINE EXTENSION",
+  "version": "1.0",
+  "description": "Fetch and summarize YouTube comments automatically",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://ai-automation-pipeline-extension.onrender.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"]
+    }
+  ]
+}
