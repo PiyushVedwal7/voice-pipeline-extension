@@ -15,6 +15,7 @@ app = Flask(__name__)
 CORS(app)  # enable CORS for your extension/frontend
 
 # ----- Gemini helper -----
+"""
 def call_gemini(prompt_text):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent?key={API_KEY}"
     payload = {"contents": [{"role": "user", "parts": [{"text": prompt_text}]}]}
@@ -27,6 +28,31 @@ def call_gemini(prompt_text):
             return f"Error {response.status_code}: {response.text}"
     except Exception as e:
         return f"Exception: {str(e)}"
+"""
+def call_gemini(prompt_text):
+    url = f"https://generativelanguage.googleapis.com/v1/models/{MODEL_NAME}:generateContent?key={API_KEY}"
+
+    payload = {
+        "contents": [
+            {
+                "parts": [
+                    {"text": prompt_text}
+                ]
+            }
+        ]
+    }
+
+    try:
+        response = requests.post(url, json=payload)
+
+        if not response.ok:
+            return f"❌ Gemini Error {response.status_code}: {response.text}"
+
+        data = response.json()
+        return data["candidates"][0]["content"]["parts"][0]["text"]
+
+    except Exception as e:
+        return f"❌ Exception: {str(e)}"
 
 # ----- Summarize comments -----
 # Summarize comments
